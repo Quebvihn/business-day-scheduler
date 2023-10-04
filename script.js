@@ -5,9 +5,7 @@
 function updateTime() {
   var today = moment();
 
-  $("#currentDay").text(today.format("dddd, MMMM Do YYYY,"));
-
-
+  $("#currentDay").text(today.format("dddd, MMMM Do, h:mm:ss"));
 
 }
 
@@ -37,3 +35,9 @@ var timeElArr = [
   schedule4pm,
   schedule5pm,
 ];
+
+setInterval(updateTime, 1000); 
+
+// render schedule saved in local storage
+
+
