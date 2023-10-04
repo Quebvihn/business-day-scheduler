@@ -8,6 +8,7 @@ function updateTime() {
   $("#currentDay").text(today.format("dddd, MMMM Do YYYY, h:mm:ss"));
 
 
+
 }
 
 updateTime()
@@ -24,3 +25,15 @@ var schedule2pm = $("#hour-2");
 var schedule3pm = $("#hour-3");
 var schedule4pm = $("#hour-4");
 var schedule5pm = $("#hour-5");
+
+var timeElArr = [
+  schedule9am,
+  schedule10am,
+  schedule11am,
+  schedule12pm,
+  schedule1pm,
+  schedule2pm,
+  schedule3pm,
+  schedule4pm,
+  schedule5pm,
+];
