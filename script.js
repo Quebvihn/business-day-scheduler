@@ -5,7 +5,7 @@
 function updateTime() {
   var today = moment();
 
-  $("#currentDay").text(today.format("dddd, MMMM Do, h:mm:ss"));
+  $("#currentDay").text(today.format("dddd, MMMM Do,"));
 
   let now = moment().format("kk");
     for (let i = 0; i < timeElArr.length; i++) {
@@ -53,8 +53,13 @@ var timeElArr = [
   schedule5pm,
 ];
 
-updateTime()
+updateTime();
+saveLocalStorage();
 
-
+function saveLocalStorage(){
+  for (let tx of timeElArr){
+    tx.val(localStorage.getItem("time block " + tx.data("hour")));
+  }
+}
 
 
