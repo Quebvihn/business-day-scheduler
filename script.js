@@ -7,9 +7,26 @@ function updateTime() {
 
   $("#currentDay").text(today.format("dddd, MMMM Do, h:mm:ss"));
 
+  let now = moment().format("kk");
+    for (let i = 0; i < timeElArr.length; i++) {
+        timeElArr[i].removeClass("future past present");
+
+        if (now > timeElArr[i].data("hour")) {
+            timeElArr[i].addClass("past");
+
+        } else if (now === timeElArr[i].attr("data-hour")) {
+            timeElArr[i].addClass("present");
+
+        } else {
+
+            timeElArr[i].addClass("future");
+        }
+    }
 }
 
-updateTime()
+
+setInterval(updateTime, 1000); 
+
 
 
 var saveBttn = $(".save-icon");
@@ -36,8 +53,8 @@ var timeElArr = [
   schedule5pm,
 ];
 
-setInterval(updateTime, 1000); 
+updateTime()
 
-// render schedule saved in local storage
+
 
 
