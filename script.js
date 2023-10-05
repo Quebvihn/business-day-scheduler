@@ -52,25 +52,4 @@ var timeElArr = [
 ];
 
 updateTime();
-saveLocalStorage();
-
-function saveLocalStorage(){
-  for (let el of timeElArr){
-    el.val(localStorage.getItem("time block " + el.data("hour")));
-  }
-}
-
-function submit(event) {
-  event.preventDefault();
-
-  var btnClicked = $(event.currentTarget);
-
-  var targetText = btnClicked.siblings("textarea");
- 
-  var targetTimeBlock = targetText.data("hour");
-
-  localStorage.setItem("time block " +  targetTimeBlock, targetText.val());
-}
-
-saveBtn.on("click", submit);
 
