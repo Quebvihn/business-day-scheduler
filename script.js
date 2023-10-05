@@ -1,6 +1,4 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+
 
 function updateTime() {
   var today = moment();
@@ -29,7 +27,7 @@ setInterval(updateTime, 1000);
 
 
 
-var saveBttn = $(".save-icon");
+var saveBtn = $(".saveBtn");
 var containerEl = $(".container");
 var schedule9am = $("#hour-9");
 var schedule10am = $("#hour-10");
@@ -57,9 +55,22 @@ updateTime();
 saveLocalStorage();
 
 function saveLocalStorage(){
-  for (let tx of timeElArr){
-    tx.val(localStorage.getItem("time block " + tx.data("hour")));
+  for (let el of timeElArr){
+    el.val(localStorage.getItem("time block " + el.data("hour")));
   }
 }
 
+function submit(event) {
+  event.preventDefault();
+
+  var btnClicked = $(event.currentTarget);
+
+  var targetText = btnClicked.siblings("textarea");
+ 
+  var targetTimeBlock = targetText.data("hour");
+
+  localStorage.setItem("time block " +  targetTimeBlock, targetText.val());
+}
+
+saveBtn.on("click", submit);
 
