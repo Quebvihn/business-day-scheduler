@@ -2,6 +2,9 @@
 
 ![Alt text](<assets/Screenshot 2023-10-04 205145.png>)
 
+![Alt text](<assets/Screenshot 2023-10-05 083743.png>)
+
+
 ## Description
 
 The  Work Day Planner is a simple and intuitive tool to help you manage your daily tasks and appointments efficiently. This planner is accessible directly from your web browser, offering dynamically updated HTML and CSS powered by jQuery. Whether you're at work, school, or home, this planner will assist you in organizing your day effectively.
