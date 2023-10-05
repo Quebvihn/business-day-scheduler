@@ -50,6 +50,31 @@ var timeElArr = [
   schedule4pm,
   schedule5pm,
 ];
+updateTime()
 
-updateTime();
+
+document.getElementById("saveBtn").addEventListener("click", function (){
+
+        var user = document.getElementById("text").value ;
+   
+        localStorage.setItem("text", user) ;
+        console.log("saved")
+    })
+
+let field = document.getElementById("text");
+
+    // See if we have an autosave value
+    // (this will only happen if the page is accidentally refreshed)
+    if (sessionStorage.getItem("autosave")) {
+      // Restore the contents of the text field
+      field.value = sessionStorage.getItem("autosave");
+    }
+    
+    // Listen for changes in the text field
+    field.addEventListener("change", () => {
+      // And save the results into the session storage object
+      sessionStorage.setItem("autosave", field.value);
+    });
+
+    
 
