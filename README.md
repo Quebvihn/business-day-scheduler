@@ -1,6 +1,6 @@
-# business-day-scheduler
+# Work Day Scheduler
 
-
+![Alt text](<assets/Screenshot 2023-10-04 205145.png>)
 
 ## Description
 
