@@ -3,7 +3,7 @@
 function updateTime() {
   var today = moment();
 
-  $("#currentDay").text(today.format("dddd, MMMM Do,"));
+  $("#currentDay").text(today.format("dddd, MMMM Do, YYYY"));
 
   let now = moment().format("kk");
     for (let i = 0; i < timeElArr.length; i++) {
